@@ -1,0 +1,253 @@
+#VRML V2.0 utf8
+
+Background {
+	skyColor 0 0 0
+}	
+Sound {
+   source AudioClip {
+      url [ "music.mp3" ]
+      loop TRUE
+   }
+   spatialize FALSE
+   intensity 0.8
+   minFront 1100
+   maxFront 1100
+   minBack 1100
+   maxBack 1100
+}
+Viewpoint {
+	position 0 1200 0
+	orientation	1 0 0 -1.57
+	fieldOfView	0.785398
+	description	"View from above"
+	jump TRUE
+}
+Viewpoint	{
+	position 0 0 400
+	orientation	0 0 1 0
+	fieldOfView	0.785398
+	description	"Solar System"
+	jump TRUE
+}
+Viewpoint	{
+	position 0 0 0
+	orientation	 0 1 0 -1
+	fieldOfView	0.785398
+	description	"Planets"
+	jump TRUE
+}
+Viewpoint	{
+	position 1 0 2
+	orientation	 0 0 1 0
+	fieldOfView	2.5
+	description	"Overview"
+	jump TRUE
+}
+
+DEF	SUN Transform
+{
+	translation	0.0 0.0 0.0
+	children[
+		Anchor {url	"https://en.wikipedia.org/wiki/Sun"
+			children [ Inline {url "Sun.wrl"}
+	]
+}]}
+
+DEF	Planet1 Transform {
+	translation	120.0 0.0 0.0 
+	center -120.0 0.0 0.0
+	children [
+		Anchor {url	"https://en.wikipedia.org/wiki/Mercury_(planet)"
+			children [ Inline {url "Mercury.wrl"}
+]}]}
+
+DEF	Planet2 Transform {
+	translation	160.0 0.0 0.0
+	center -160.0 0.0 0.0
+	children [
+		Anchor {url	"https://en.wikipedia.org/wiki/Venus"
+			children [ Inline { url "Venus.wrl"}
+]}]}
+DEF	Planet3 Transform {
+	translation	200.0 0.0 0.0
+	center -200.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Earth"
+			children [ Inline {url	"Earth.wrl"}
+]}]}
+DEF	Planet4 Transform {
+	translation	240.0 0.0 0.0
+	center -240.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Mars"
+			children [ Inline {url	"Mars.wrl"}
+]}]}
+DEF	Planet5 Transform {
+	translation	280.0 0.0 0.0
+	center -280.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Jupiter"
+			children [ Inline {url	"Jupiter.wrl"}
+]}]}
+DEF	Planet6 Transform {
+	translation	360.0 0.0 0.0
+	center -360.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Saturn"
+			children [ Inline {url	"Saturn.wrl"}
+]}]}
+DEF	Rings Transform	{
+	translation	360.0 0.0 0.0
+	center -360.0 0.0 0.0
+	children[
+		Inline { url "Rings.wrl"}
+	]
+}
+DEF	Planet7	Transform {
+	translation	440.0 0.0 0.0
+	center -440.0 0.0 0.0
+	children[
+		Anchor { url "https://en.wikipedia.org/wiki/Uranus"
+			children [ Inline {url	"Uranus.wrl"}
+]}]}
+DEF	Planet8	Transform {
+	translation	520.0 0.0 0.0
+	center -520.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Neptune"
+			children [ Inline { url "Neptune.wrl"}
+]}]}
+  
+   
+   DEF Clock1 TimeSensor {
+		    cycleInterval 2.4787
+		    loop TRUE
+      },
+   DEF Clock2 TimeSensor {
+		    cycleInterval 3.63502
+		    loop TRUE
+      },
+   DEF Clock3 TimeSensor {
+		    cycleInterval 4.2978
+		    loop TRUE
+      },
+   DEF Clock4 TimeSensor {   
+		    cycleInterval 4.7924077
+		    loop TRUE
+      },
+   DEF Clock5 TimeSensor {    
+			cycleInterval 5.81307
+			loop TRUE
+      },
+   DEF Clock6 TimeSensor {    
+			 cycleInterval 6.2969
+			 loop TRUE
+      },
+   DEF Clock7 TimeSensor {    
+			 cycleInterval 6.2969
+			 loop TRUE
+      },
+   DEF Clock8 TimeSensor {
+		  cycleInterval	6.81
+		  loop TRUE
+	  },
+   DEF Clock9 TimeSensor {
+		  cycleInterval	7.4543
+		  loop TRUE
+	  },
+ 
+      DEF Path1 OrientationInterpolator {
+  key [ 0.0, 0.50, 1.0 ]
+  keyValue [                          
+    0 0.995037 0.0995037 0.0,       
+    0 0.995037 0.0995037 3.14,   
+    0 0.995037 0.0995037 6.28
+   ]
+      },
+      DEF Path2 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    -0.0775436 0.996989 0  0.0,
+    -0.0775436 0.996989 0  3.14,
+    -0.0775436 0.996989 0  6.28
+   ]
+      },
+      DEF Path3 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    0 0.996989 0.0775436 0.0,
+    0 0.996989 0.0775436 3.14,
+    0 0.996989 0.0775436 6.28
+   ]
+      }
+    DEF Path4 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    0 0.986989 0.0775436 0.0,
+    0 0.986989 0.0775436 3.14,
+    0 0.986989 0.0775436 6.28
+   ]
+      }
+   DEF Path5 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    0 0.996989 0.0775436 0.0,
+    0 0.996989 0.0775436 3.14,
+    0 0.996989 0.0775436 6.28
+   ]
+      }
+   DEF Path6 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    0 0.996989 0.0775436 0.0,
+    0 0.996989 0.0775436 3.14,
+    0 0.996989 0.0775436 6.28
+   ]
+      }
+     DEF Path7 OrientationInterpolator {
+  key [ 0.0 0.50 1.0 ]
+  keyValue [
+    0 0.996989 0.0775436 0.0,
+    0 0.996989 0.0775436 3.14,
+    0 0.996989 0.0775436 6.28
+   ]
+      }
+	  DEF Path8	OrientationInterpolator	{
+		  key [0.0 0.50 1.0]
+		  keyValue [
+	0 0.997989 0.0775436 0.0,
+	0 0.997989 0.0775436 3.14, 
+	0 0.997989 0.0775436 6.28,
+
+		  ]
+	  }
+	  DEF Path9	OrientationInterpolator	{
+		  key[0.0 0.50 1.0]
+		  keyValue [
+	0 0.998989 0.0775436 0.0,
+	0 0.998989 0.0775436 3.14, 
+	0 0.998989 0.0775436 6.28,
+
+
+		  ]
+	  }
+     
+
+ROUTE Clock1.fraction_changed TO Path1.set_fraction
+ROUTE Clock2.fraction_changed TO Path2.set_fraction
+ROUTE Clock3.fraction_changed TO Path3.set_fraction
+ROUTE Clock4.fraction_changed TO Path4.set_fraction
+ROUTE Clock5.fraction_changed TO Path5.set_fraction
+ROUTE Clock6.fraction_changed TO Path6.set_fraction
+ROUTE Clock7.fraction_changed TO Path7.set_fraction
+ROUTE Clock8.fraction_changed TO Path8.set_fraction
+ROUTE Clock9.fraction_changed TO Path9.set_fraction
+ROUTE Path1.value_changed TO Planet1.set_rotation
+ROUTE Path2.value_changed TO Planet2.set_rotation
+ROUTE Path3.value_changed TO Planet3.set_rotation
+ROUTE Path4.value_changed TO Planet4.set_rotation
+ROUTE Path5.value_changed TO Planet5.set_rotation
+ROUTE Path6.value_changed TO Planet6.set_rotation
+ROUTE Path7.value_changed TO Rings.set_rotation
+ROUTE Path8.value_changed TO Planet7.set_rotation
+ROUTE Path9.value_changed TO Planet8.set_rotation

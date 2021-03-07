@@ -1,0 +1,147 @@
+#VRML V2.0 utf8
+
+Background {
+	skyColor 0.678 0.847 0.902	
+}
+
+Viewpoint	{
+	position 0 15 60
+	orientation	 0 1 0 0
+	fieldOfView	0.785398
+	description	"OZN"
+	jump TRUE
+}
+Viewpoint	{
+	position 0 10 40
+	orientation	 0 1 0 0
+	fieldOfView	0.785398
+	description	"Aliens"
+	jump TRUE
+}
+Viewpoint	{
+	position 0 10 30
+	orientation	 0 1 0 0
+	fieldOfView	0.785398
+	description	"Aliens closer"
+	jump TRUE
+}
+Viewpoint	{
+	position -7 10 30
+	orientation	 0 1 0 -0.4
+	fieldOfView	0.785398
+	description	"Alien Detail"
+	jump TRUE
+}
+Viewpoint {
+	position 0 30 50
+	orientation	5 3 0 -0.5
+	fieldOfView	  0.785398
+	description	"Better Look at OZN"
+	jump TRUE
+}
+Viewpoint {
+	position 0 55 60
+	orientation	5 3 0 -0.75
+	fieldOfView	  0.785398
+	description	"Overview"
+	jump TRUE
+}
+Sound {
+   source AudioClip {
+      url [ "amusic.mp3" ]
+      loop TRUE
+   }
+   spatialize FALSE
+   intensity 0.8
+   minFront 100
+   maxFront 100
+   minBack 100
+   maxBack 100
+}
+Viewpoint {
+	position 0.0 15.0 50.0
+	orientation	1 0 0 -0.3
+}
+
+Shape {
+	appearance Appearance {
+		texture	ImageTexture { 
+			url "grass.JPG"	
+			repeatS TRUE 
+			repeatT FALSE }
+		}
+		geometry Box {
+			size 100 2.0 100
+		}
+	}
+
+
+DEF	OZN+RAY Transform
+	{
+	translation	0.0 25.0 0.0
+	children [
+	Anchor { url "SolarSystem.wrl"
+		description	"TAKE ME TO THE STARS"
+	children[ Inline	{ 
+		url "OZN+RAY.wrl"
+	}
+]}]}
+
+DEF	Alien Transform	{
+	translation	-5.0 12.5 20.0
+	scale 0.25 0.25 0.25
+	children [ Inline { url	"Alien.wrl"}
+	]}
+DEF	Alien Transform	{
+	translation	5.0 12.5 15.0
+	scale 0.25 0.25 0.25
+	children [ Inline { url	"Alien.wrl"}
+	]}
+DEF	Alien Transform	{
+	translation	2.5 8.0 23.0
+	scale 0.15 0.15 0.15
+	children [ Inline { url	"Alien.wrl"}
+	]}
+
+
+DEF Tree1 Transform {
+	translation	5.0 3.0 0.0
+	children [
+		Inline { url "Tree.wrl"}
+	]
+}
+
+DEF Tree2 Transform {
+	translation	-7.0 3.0 5.0
+	children [
+		Inline { url "Tree.wrl"}
+	]
+}
+DEF Tree3 Transform {
+	translation	-12.5 3.0 8.0
+	children [
+		Inline { url "Tree.wrl"}
+	]
+}
+DEF Tree4 Transform {
+	translation	16.0 3.0 10.2
+	children [
+		Inline { url "Tree.wrl"}
+	]
+}
+DEF Tree5 Transform {
+	translation	20.0 3.0 15.2
+	children [
+		Inline { url "Tree.wrl"}
+	]
+}  
+DEF	Tree6 Transform	{
+	translation	30.0 3.0 -40.0
+		children [
+		Inline { url "Tree.wrl"}
+	]
+} 
+	
+
+
+

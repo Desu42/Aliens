@@ -1,0 +1,41 @@
+#VRML V2.0 utf8
+
+WorldInfo {
+	title "Jupiter"
+}
+
+DEF VP_Origin Viewpoint {
+	position	0 0 50
+}
+
+
+DEF Tecfa Transform {
+   rotation  0 1 0  0
+   children Shape{
+	appearance Appearance {
+		material Material {}
+		texture	ImageTexture {
+			url	"Jupiter.JPG"
+	}
+}
+	geometry Sphere{radius 17.0}
+}
+}
+
+DEF TIME TimeSensor {
+   cycleInterval 2
+   startTime	0
+   stopTime	-1
+   loop		TRUE
+}
+
+DEF OI_Tecfa OrientationInterpolator {
+   key 		[ 0 0.5 1 ]
+   keyValue	[ 0 1 0  0, 0 1 0  3.1416, 0 1 0  6.2832]
+}
+
+
+ROUTE TIME.fraction_changed TO OI_Tecfa.set_fraction
+ROUTE OI_Tecfa.value_changed TO Tecfa.rotation
+
+

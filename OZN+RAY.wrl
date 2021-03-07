@@ -1,0 +1,36 @@
+#VRML V2.0 utf8
+
+Viewpoint {
+	position 0 -10 70}
+
+
+DEF	Tecfa Transform	{
+	translation	0 5 0
+	children [
+		Inline { url "RAY.wrl"}
+	]
+}
+
+DEF	TIME TimeSensor	{
+	cycleInterval 3
+	startTime 0
+	stopTime -1
+	loop TRUE
+}
+
+DEF Animation PositionInterpolator {
+	key	[0.0 0.50 1.0]
+    keyValue [ 0.0 10.0 0.0, 0.0 0.0 0.0, ]
+}
+Transform {
+	translation	0 5 0
+	children [
+	Inline {url	"OZN.wrl"}
+]
+}
+
+
+
+
+ROUTE	TIME.fraction_changed	TO	Animation.set_fraction	
+ROUTE Animation.value_changed TO Tecfa.translation

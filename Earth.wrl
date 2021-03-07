@@ -1,0 +1,63 @@
+#VRML V2.0 utf8
+
+WorldInfo {
+	title "Earth + Moon"
+}
+
+DEF VP_Origin Viewpoint {
+	position	0 0 35
+}
+
+
+DEF Tecfa Transform {
+   rotation  0 1 0  0
+   children Shape{
+	appearance Appearance {
+		material Material {}
+		texture	ImageTexture {
+			url	"Earth.JPG"
+	}
+}
+	geometry Sphere{radius 12.0}
+}
+}
+DEF	Moon Transform {
+	translation	20.0 0.0 0.0
+	center -20.0 0.0 0.0
+	children [
+		Anchor { url "https://en.wikipedia.org/wiki/Moon"
+			children [Inline {url "Moon.wrl"}
+]}]}
+
+DEF Clock1 TimeSensor {
+   cycleInterval 2
+   startTime	0
+   stopTime	-1
+   loop		TRUE
+},
+DEF	Clock2 TimeSensor {
+	cycleInterval 4
+	loop TRUE
+},
+
+DEF OI_Tecfa OrientationInterpolator {
+   key 		[ 0 0.5 1 ]
+   keyValue	[ 0 1 0  0, 0 1 0  3.1416, 0 1 0  6.2832]
+},
+DEF	Moon_Path OrientationInterpolator {
+	  key [ 0.0, 0.50, 1.0 ]
+  keyValue [                          
+    0 0.995037 0.0995037 0.0,       
+    0 0.995037 0.0995037 3.14,   
+    0 0.995037 0.0995037 6.28
+   ]
+}
+
+
+
+ROUTE Clock1.fraction_changed TO OI_Tecfa.set_fraction
+ROUTE OI_Tecfa.value_changed TO Tecfa.rotation
+ROUTE Clock2.fraction_changed TO Moon_Path.set_fraction
+ROUTE Moon_Path.value_changed TO Moon.set_rotation 
+
+
